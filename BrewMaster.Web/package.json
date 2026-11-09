@@ -1,0 +1,67 @@
+{
+  "name": "brewmaster-web",
+  "private": true,
+  "version": "0.1.0",
+  "description": "Aplicativo desktop do sistema BrewMaster.",
+  "author": "BrewMaster",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc -b && vite build",
+    "preview": "vite preview",
+    "desktop:dev": "electron .",
+    "desktop:stage": "node electron/stage-installer.cjs",
+    "desktop:build": "npm run build && electron-builder --win nsis && npm run desktop:stage && npm run build"
+  },
+  "dependencies": {
+    "@types/react": "latest",
+    "@types/react-dom": "latest",
+    "@vitejs/plugin-react": "latest",
+    "docx": "^9.8.1",
+    "lucide-react": "latest",
+    "react": "latest",
+    "react-dom": "latest",
+    "typescript": "latest",
+    "vite": "latest"
+  },
+  "devDependencies": {
+    "electron": "^38.2.0",
+    "electron-builder": "^26.0.12"
+  },
+  "main": "electron/main.cjs",
+  "build": {
+    "appId": "br.com.brewmaster.desktop",
+    "productName": "BrewMaster",
+    "artifactName": "BrewMaster-Setup-${version}.${ext}",
+    "files": [
+      "dist/**/*",
+      "!dist/BrewMaster.Exe/BrewMaster-Setup.exe",
+      "!dist/BrewMaster.Android/BrewMaster.apk",
+      "electron/**/*",
+      "package.json"
+    ],
+    "directories": {
+      "output": "release-desktop"
+    },
+    "win": {
+      "target": [
+        {
+          "target": "nsis",
+          "arch": [
+            "x64"
+          ]
+        }
+      ]
+    },
+    "nsis": {
+      "oneClick": false,
+      "allowToChangeInstallationDirectory": true,
+      "createDesktopShortcut": true,
+      "createStartMenuShortcut": true
+    }
+  },
+  "allowScripts": {
+    "electron@38.8.6": true,
+    "electron-winstaller@5.4.0": true
+  }
+}

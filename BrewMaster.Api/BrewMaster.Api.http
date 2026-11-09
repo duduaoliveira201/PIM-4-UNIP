@@ -1,0 +1,6 @@
+@BrewMaster.Api_HostAddress = http://localhost:5189
+
+GET {{BrewMaster.Api_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

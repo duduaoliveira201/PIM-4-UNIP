@@ -1,0 +1,48 @@
+# Dependências
+node_modules/
+vendor/
+
+# Python
+venv/
+.venv/
+__pycache__/
+*.pyc
+
+# Configurações e segredos
+.env
+.env.*
+!.env.example
+
+# Arquivos temporários
+*.log
+*.tmp
+.DS_Store
+Thumbs.db
+
+# Cache e arquivos de desenvolvimento
+.cache/
+.pytest_cache/
+
+# Dependências
+**/node_modules/
+
+# Ferramentas locais
+.tools/
+
+# Arquivos de compilação e instalação
+BrewMaster.Web/dist/BrewMaster.Exe/
+BrewMaster.Web/release-desktop/
+
+# Arquivos temporários
+*.log
+*.tmp
+
+**/node_modules/
+.tools/
+BrewMaster.Web/release-desktop/
+BrewMaster.Web/dist/BrewMaster.Exe/
+
+**/node_modules/
+.tools/
+BrewMaster.Web/release-desktop/
+BrewMaster.Web/dist/BrewMaster.Exe/

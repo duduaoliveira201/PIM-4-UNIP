@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      http-equiv="Content-Security-Policy"
+      content="default-src 'self'; style-src 'self'; script-src 'self';"
+    />
+    <title>Configurar BrewMaster</title>
+    <link rel="stylesheet" href="./setup.css" />
+    <script src="./setup.js" defer></script>
+  </head>
+  <body>
+    <main class="setup-card">
+      <div class="brand-mark" aria-hidden="true">B</div>
+      <p class="eyebrow">BrewMaster para Windows</p>
+      <h1>Conecte-se ao sistema</h1>
+      <p class="description">
+        Informe o endereço web centralizado da sua empresa. Seus dados permanecem
+        no servidor e são acessados exclusivamente pela API.
+      </p>
+      <form id="site-form">
+        <label for="site-url">Endereço do sistema</label>
+        <input
+          id="site-url"
+          name="site-url"
+          type="url"
+          placeholder="https://sistema.suaempresa.com.br"
+          autocomplete="url"
+          required
+        />
+        <p class="hint">Use o endereço HTTPS fornecido pelo administrador do sistema.</p>
+        <p id="error-message" class="error-message" role="alert" hidden></p>
+        <button id="save-button" type="submit">Conectar ao BrewMaster</button>
+      </form>
+    </main>
+  </body>
+</html>
